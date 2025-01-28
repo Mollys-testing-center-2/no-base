@@ -26,6 +26,8 @@ jobs:
       - run: npm install
       - run: npm run test
       - name: Codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
             curl https://keybase.io/codecovsecurity/pgp_keys.asc | gpg --import
             curl -Os https://uploader.codecov.io/latest/codecov-linux
